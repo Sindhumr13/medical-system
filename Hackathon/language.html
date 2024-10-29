@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 50px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Select Information</h2>
+    <form id="information-selection-form">
+        <label for="user-type">Select User Type:</label>
+        <select id="user-type" name="user-type" required>
+            <option value="">Select User Type</option>
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+        </select>
+
+        <label for="language">Select Language:</label>
+        <select id="language" name="language" required>
+            <option value="">Select Language</option>
+            <option value="english">English</option>
+            <option value="kannada">Kannada</option>
+            <option value="hindi">Hindi</option>
+            <option value="tamil">Tamil</option>
+            <option value="telgu">Telgu</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('language-selection-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const userType = document.getElementById('user-type').value;
+        const language = document.getElementById('language').value;
+
+        // Here, you would typically send this data to your server
+        console.log({ userType, language });
+        alert('Language selection submitted! Check console for details.');
+    });
+</script>
+
+</body>
+</html>
